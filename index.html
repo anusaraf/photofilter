@@ -1,0 +1,593 @@
+﻿<!DOCTYPE html>
+
+<html lang="en"xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link  href="about.php" />
+    <title>
+        Online Image Effect
+    </title>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="abouts.php">About</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </nav>
+
+
+
+
+
+    <div class="container-fluid ">
+        <div class="jumbotron" style="background:blue;">
+
+            <h1>Amazing Online Photo Filter Editor</h1>
+            <div class="text-center">
+                <img src="sanu.jpg" class=" img-fluid" alt="Effect Image" style="text-align: left" />
+                <img src="rud.jpg" class=" img-fluid" alt="Effect Image" style="text-align: right" />
+            </div>
+            <br />
+            <p> Make Beautiful Stunning Of Your Photo Like This.</p>
+        </div>
+
+    </div>
+
+
+
+
+
+
+    <div class="container-fluid pt-3" style="        background-color: #570dce
+">
+
+
+
+
+
+
+        <div class="row">
+            <div class="col-md-10 m-auto">
+                <div class="custom-file mb-3">
+                    <input type="file" class="custom-file-input"
+                           id="upload-file">
+                    <label for="upload-file"
+                           class="custom-file-label">
+                        Choose Image
+                    </label>
+
+
+                </div>
+
+
+                <canvas id="canvas"></canvas>
+
+                <br />
+
+                <br />
+
+
+                <div class="dropdown dropright">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                        CROP IMAGE
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item"><input id=wi type="text" placeholder="Enter width for your image" /></a>
+                        <a class="dropdown-item"><input id=he type="text" placeholder="Enter height for your image" /></a>
+                        <a class="dropdown-item">
+                            <input id=x type="text" placeholder="Enter x attribute for your image" />
+                        </a>
+                        <a class="dropdown-item">
+                            <input id=y type="text" placeholder="Enter y attribute  for your image " />
+                        </a>
+                        <pre> <a class="dropdown-item">  <input type="submit" name="preview" id="preview">        <button id="crop">Crop</button></a></pre>
+
+                    </div>
+                </div>
+
+
+
+
+                <br />
+                <br />
+
+
+                <button class="btn btn-warning
+                                btn-disabled" disabled>
+                    FILTER
+                </button>
+
+
+                <div class="row text-center my-3">
+
+                    <div class="col-md-3">
+                        <div class="btn-group btn-group-sm">
+                            <button class="filter-btn
+                                brightness-remove btn btn-info">
+                                -
+                            </button>
+
+                            <button class="btn btn-danger
+                                btn-disabled" disabled>
+                                Brightness
+                            </button>
+
+                            <button class="filter-btn
+                                brightness-add btn btn-info">
+                                +
+                            </button>
+
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-3">
+                        <div class="btn-group btn-group-sm">
+                            <button class="filter-btn
+                                contrast-remove btn btn-info">
+                                -
+                            </button>
+
+                            <button class="btn btn-danger
+                                btn-disabled" disabled>
+                                Contrast
+                            </button>
+
+                            <button class="filter-btn
+                               contrast-add btn btn-info">
+                                +
+                            </button>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-md-3">
+                        <div class="btn-group btn-group-sm">
+                            <button class="filter-btn
+                                saturation-remove btn btn-info">
+                                -
+                            </button>
+
+                            <button class="btn btn-danger
+                                btn-disabled" disabled>
+                                Saturation
+                            </button>
+
+                            <button class="filter-btn
+                                saturation-add btn btn-info">
+                                +
+                            </button>
+
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="col-md-3">
+                        <div class="btn-group btn-group-sm">
+                            <button class="filter-btn
+                                vibrance-remove btn btn-info">
+                                -
+                            </button>
+
+                            <button class="btn btn-danger
+                                btn-disabled" disabled>
+                                Vibrance
+                            </button>
+
+                            <button class="filter-btn
+                                vibrance-add btn btn-info">
+                                +
+                            </button>
+
+                        </div>
+                    </div>
+
+
+
+                    <br />
+                    <br />
+
+                    <div class="col-md-3">
+                        <div class="btn-group btn-group-sm">
+                            <button class="filter-btn
+                                sepia-remove btn btn-info">
+                                -
+                            </button>
+
+                            <button class="btn btn-danger
+                                btn-disabled" disabled>
+                                Sepia
+                            </button>
+
+                            <button class="filter-btn
+                                sepia-add btn btn-info">
+                                +
+                            </button>
+
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="col-md-3">
+                        <div class="btn-group btn-group-sm">
+                            <button class="filter-btn
+                                hue-remove btn btn-info">
+                                -
+                            </button>
+
+                            <button class="btn btn-danger
+                                btn-disabled" disabled>
+                                Hue
+                            </button>
+
+                            <button class="filter-btn
+                                hue-add btn btn-info">
+                                +
+                            </button>
+
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-3">
+                        <div class="btn-group btn-group-sm">
+                            <button class="filter-btn
+                                sharpen-remove btn btn-info">
+                                -
+                            </button>
+
+                            <button class="btn btn-danger
+                                btn-disabled" disabled>
+                                Sharpen
+                            </button>
+
+                            <button class="filter-btn
+                                sharpen-add btn btn-info">
+                                +
+                            </button>
+
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="col-md-3">
+                        <div class="btn-group btn-group-sm">
+                            <button class="filter-btn
+                                gamma-remove btn btn-info " disabled>
+                                -
+                            </button>
+
+                            <button class="btn btn-danger
+                                btn-disabled" disabled>
+                                Gamma
+                            </button>
+
+                            <button class="filter-btn
+                                gamma-add btn btn-info">
+                                +
+                            </button>
+
+                        </div>
+                    </div>
+
+
+
+                    <br />
+                    <br />
+
+                    <div class="col-md-3">
+                        <div class="btn-group btn-group-sm">
+                            <button class="filter-btn
+                                stackBlur-remove btn btn-info" disabled>
+                                -
+                            </button>
+
+                            <button class="btn btn-danger
+                                btn-disabled" disabled>
+                                StackBlur
+                            </button>
+
+                            <button class="filter-btn
+                                stackBlur-add btn btn-info">
+                                +
+                            </button>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-md-3">
+                        <div class="btn-group btn-group-sm">
+                            <button class="filter-btn
+                                noise-remove btn btn-info" disabled>
+                                -
+                            </button>
+
+                            <button class="btn btn-danger
+                                btn-disabled" disabled>
+                                Noise
+                            </button>
+
+                            <button class="filter-btn
+                                noise-add btn btn-info">
+                                +
+                            </button>
+
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+                    <div class="col-md-3">
+                        <div class="btn-group btn-group-sm">
+                            <button class="filter-btn
+                                clip-remove btn btn-info">
+                                -
+                            </button>
+
+                            <button class="btn btn-danger
+                                btn-disabled" disabled>
+                                Clip
+                            </button>
+
+                            <button class="filter-btn
+                                clip-add btn btn-info">
+                                +
+                            </button>
+
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div><!-- ./ row -->
+
+                <button class="btn btn-warning
+                                btn-disabled " disabled>
+                    EFFECTS
+                </button>
+
+                </br>
+                </br>
+
+                <div class="row md-3">
+
+                    <div class="col-md-3">
+                        <button class="filter-btn vintage-add btn btn-info btn-block"> Vintage </button>
+
+                    </div>
+
+
+
+                    <div class="col-md-3">
+                        <button class="filter-btn lomo-add btn btn-info btn-block"> Lomo </button>
+
+                    </div>
+
+
+
+                    <div class="col-md-3">
+                        <button class="filter-btn nostalgia-add btn btn-info btn-block"> Nostalgia </button>
+
+                    </div>
+
+                    <div class="col-md-3">
+                        <button class="filter-btn clarity-add btn btn-info btn-block"> Clarity </button>
+
+                    </div>
+
+
+
+
+
+
+
+
+                </div><!-- ./ row -->
+
+                <br />
+
+
+                <div class="row md-3">
+                    <div class="col-md-3">
+                        <button class="filter-btn crossprocess-add btn  btn-info btn-block "> Cross Process </button>
+
+                    </div>
+
+
+
+                    <div class="col-md-3">
+                        <button class="filter-btn pinhole-add btn btn-info btn-block"> Pinhole </button>
+
+                    </div>
+
+
+                    <div class="col-md-3">
+                        <button class="filter-btn hazyDays-add btn btn-info btn-block"> Hazy </button>
+
+
+                    </div>
+
+
+                    <div class="col-md-3">
+                        <button class="filter-btn herMajesty-add btn btn-info btn-block"> Her Majesty</button>
+
+
+                    </div>
+
+
+
+
+
+                </div><!-- ./ row -->
+
+
+                <br />
+                <div class="row md-3">
+                    <div class="col-md-3">
+                        <button class="filter-btn sinCity-add btn btn-info btn-block"> Sin City</button>
+                    </div>
+
+                    <div class="col-md-3">
+                        <button class="filter-btn love-add btn btn-info btn-block"> Love </button>
+
+                    </div>
+
+
+                    <div class="col-md-3">
+                        <button class="filter-btn sunrise-add btn btn-info btn-block"> Sunrise </button>
+
+                    </div>
+
+                    <div class="col-md-3">
+                        <button class="filter-btn grungy-add btn btn-info btn-block"> Grungy </button>
+                    </div>
+
+
+                </div>
+                <br />
+
+
+                <div class="row md-3">
+
+                    <div class="col-md-3">
+                        <button class="filter-btn jarques-add btn btn-info btn-block"> Jarques </button>
+
+                    </div>
+
+                    <div class="col-md-3">
+                        <button class="filter-btn glowingsun-add btn btn-info btn-block"> Glowing Sun </button>
+
+                    </div>
+
+
+                    <div class="col-md-3">
+                        <button class="filter-btn orangePeel-add btn btn-info btn-block"> Orange Peel </button>
+
+                    </div>
+
+                    <div class="col-md-3">
+                        <button class="filter-btn posterize-add btn btn-info btn-block"> Posterize </button>
+
+                    </div>
+
+
+
+                </div>
+
+                <br />
+
+
+
+                <div class="row md-3">
+                    <div class="col-md-3">
+                        <button class="filter-btn radialBlur-add btn btn-info btn-block"> RadialBlur </button>
+
+                    </div>
+
+                    <div class="col-md-3">
+                        <button class="filter-btn emboss-add btn btn-info btn-block"> Emboss </button>
+
+                    </div>
+
+                    <div class="col-md-3">
+                        <button class="filter-btn oldBoot-add btn btn-info btn-block"> OldBoot </button>
+
+                    </div>
+                    <div class="col-md-3">
+                        <button class="filter-btn edgeEnhance-add btn btn-info btn-block"> EdgeEnhance </button>
+
+                    </div>
+
+                </div>
+
+
+
+
+
+
+                <div class="row my-5">
+                    <div class="col-md-6">
+
+                        <button id="download-btn" class="btn btn-warning btn-block">Download Image</button>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <button id="revert-btn" class="btn btn-danger btn-block">Remove Filter</button>
+
+                    </div>
+
+                </div>
+
+
+
+
+
+
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/camanjs/4.1.2/caman.full.min.js"></script>
+                <script src="main.js "></script>
+
+
+
+
+            </div>
+
+        </div>
+
+        <input id= width type="label" placeholder="Enter width for your image" />
+    </div>
+
+
+    
+</body>
+
+</html>
